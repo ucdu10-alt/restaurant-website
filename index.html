@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一花 | 鹿児島 天文館 日本料理</title>
+<meta name="description" content="鹿児島・天文館。旬の食材と地の恵みを上品に仕立てる日本料理店「一花」。カウンター8席の隠れ家で、四季の一皿と誂えの酒をゆっくりと。">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="loader" id="loader"><span>一花</span></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#home" class="brand">
+      <img src="images/logo-mark.png" alt="一花" class="brand-logo">
+      <span class="brand-sub">ICHIHANA</span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#concept">概念</a>
+      <a href="#cuisine">お料理</a>
+      <a href="#gallery">店内</a>
+      <a href="#chef">職人</a>
+      <a href="#access">アクセス</a>
+      <a href="#access" class="nav-cta">ご予約</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-media">
+      <img src="images/hero-counter.jpg" alt="一花 カウンター席の様子">
+      <div class="hero-scrim"></div>
+    </div>
+    <div class="hero-pattern"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">鹿児島 ・ 天文館</p>
+      <h1 class="hero-title"><img src="images/logo-full.png" alt="一花 ICHIHANA" class="hero-logo"></h1>
+      <p class="hero-tagline">旬を、上品に。</p>
+      <a href="#concept" class="hero-scroll" aria-label="下へスクロール"><span></span></a>
+    </div>
+  </section>
+
+  <!-- CONCEPT -->
+  <section class="concept" id="concept">
+    <div class="section-inner concept-grid">
+      <div class="concept-image reveal">
+        <img src="images/about-ikebana.jpg" alt="一花の店内に飾られた流木のいけばなと鳥かご">
+      </div>
+      <div class="concept-text reveal">
+        <p class="section-label">Concept</p>
+        <h2 class="section-title">天文館の喧騒に、<br>そっと隠れた花一輪。</h2>
+        <p class="lead">
+          鹿児島市電・天文館通駅から歩いてわずか三分。
+          雑居ビルの二階、ひっそりと灯る「一花」の暖簾をくぐると、
+          そこには時間の流れがゆるやかになる空間が広がっています。
+        </p>
+        <p>
+          麻の葉文様の行灯が柔らかく照らす一枚板のカウンター、
+          香を焚く古伊万里の香炉、そして流木にあしらわれた四季のいけばな。
+          しつらえのひとつひとつに、亭主のもてなしの心が宿ります。
+        </p>
+        <p>
+          鹿児島の海と大地が育んだ旬の素材を、
+          あるがままの美しさを損なわずに、ひと手間かけて上品に。
+          派手さではなく、静かな確かさで満たす一夜を、どうぞ。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUISINE -->
+  <section class="cuisine" id="cuisine">
+    <div class="section-inner">
+      <div class="section-head center reveal">
+        <p class="section-label">Cuisine</p>
+        <h2 class="section-title">旬を活かす、<br class="sp-only">誂えの一皿</h2>
+        <p class="lead center-text">
+          お造り、天ぷら、炭火の焼き物、そして名物の炊き込みご飯まで。
+          鹿児島の恵みを軸に、その日仕入れた最良の食材で献立を組む
+          お任せコースを中心にお楽しみいただけます。
+        </p>
+      </div>
+
+      <div class="dish-flow">
+        <figure class="dish-item reveal size-lg">
+          <span class="blend-photo bg-alt"><img src="images/dish-maguro.jpg" alt="極上の本鮪の刺身"></span>
+          <figcaption><span class="tag">刺身</span>旬を仕入れる、極上の一塊</figcaption>
+        </figure>
+        <figure class="dish-item reveal size-md offset-down">
+          <span class="blend-photo bg-alt"><img src="images/dish-wagyu.jpg" alt="黒毛和牛の炙り焼き"></span>
+          <figcaption><span class="tag">焼き物</span>黒毛和牛を炭火で炙って</figcaption>
+        </figure>
+        <figure class="dish-item reveal size-md">
+          <span class="blend-photo bg-alt"><img src="images/dish-shiroyaki-uni.jpg" alt="甘鯛の鱗焼き"></span>
+          <figcaption><span class="tag">焼き物</span>甘鯛の鱗をぱりっと香ばしく</figcaption>
+        </figure>
+        <figure class="dish-item reveal size-sm offset-down">
+          <span class="blend-photo bg-alt"><img src="images/dish-tempura.jpg" alt="天ぷらの盛り合わせ"></span>
+          <figcaption><span class="tag">天ぷら</span>薄衣で仕上げる季節の天ぷら</figcaption>
+        </figure>
+        <figure class="dish-item reveal size-md">
+          <span class="blend-photo bg-alt"><img src="images/dish-sashimi-moriawase.jpg" alt="鮪と鯛の造り盛り合わせ"></span>
+          <figcaption><span class="tag">造り</span>目にも美しい盛り合わせ</figcaption>
+        </figure>
+      </div>
+
+      <div class="course-intro reveal">
+        <p class="section-label center-label">Course</p>
+        <p class="lead center-text">
+          誕生日や記念日など特別な一夜にも、<br class="sp-only">
+          日常にちょっとした贅沢をしたい夜にも。<br>
+          ふたつのおまかせコースをご用意しております。
+        </p>
+      </div>
+
+      <div class="course-grid reveal">
+        <div class="course-card">
+          <p class="course-name">おまかせコース</p>
+          <p class="course-for">日常のちょっと贅沢な一夜に</p>
+          <p class="course-price">6,600<small>円</small></p>
+          <p class="course-tax">税込</p>
+        </div>
+        <div class="course-card">
+          <p class="course-name">特選おまかせコース</p>
+          <p class="course-for">誕生日・記念日など特別な日に</p>
+          <p class="course-price">8,800<small>円</small></p>
+          <p class="course-tax">税込</p>
+        </div>
+      </div>
+
+      <p class="cuisine-note reveal">
+        地元の蔵元の焼酎・日本酒、季節のワインもご用意。<br class="sp-only">
+        料理に寄り添う一杯を、その日の気分でお選びいただけます。
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERY / INTERIOR -->
+  <section class="gallery" id="gallery">
+    <div class="section-inner">
+      <div class="section-head center reveal">
+        <p class="section-label">Atmosphere</p>
+        <h2 class="section-title">静けさの中に、<br class="sp-only">上質なしつらえ</h2>
+      </div>
+    </div>
+
+    <div class="gallery-flow">
+      <div class="g-item reveal size-lg"><span class="blend-photo bg-base"><img src="images/interior-counter-vertical.jpg" alt="麻の葉文様の行灯とカウンター"></span></div>
+      <div class="g-item reveal size-sm offset-down"><span class="blend-photo bg-base"><img src="images/interior-birdcage.jpg" alt="流木にあしらわれた竹の鳥かご"></span></div>
+      <div class="g-item reveal size-md"><span class="blend-photo bg-base"><img src="images/interior-tableroom.jpg" alt="障子と坪庭を望むテーブル席"></span></div>
+      <div class="g-item reveal size-sm offset-down"><span class="blend-photo bg-base"><img src="images/interior-incense.jpg" alt="古伊万里の香炉から立ちのぼる香"></span></div>
+      <div class="g-item reveal size-md"><span class="blend-photo bg-base"><img src="images/interior-counter-chef.jpg" alt="カウンター越しに調理する職人"></span></div>
+    </div>
+  </section>
+
+  <!-- CHEF -->
+  <section class="chef" id="chef">
+    <div class="section-inner chef-grid">
+      <div class="chef-image reveal">
+        <img src="images/chef-portrait.jpg" alt="一花の店主">
+      </div>
+      <div class="chef-text reveal">
+        <p class="section-label">Our Pride</p>
+        <h2 class="section-title">鹿児島の恵みに、<br>誠実な仕事を。</h2>
+        <p class="lead">
+          市場に立ち、その日いちばんの魚と向き合う。
+          華美な技巧に頼るのではなく、食材の持ち味を見極め、
+          最も美しい状態でお出しすることを何よりも大切にしています。
+        </p>
+        <p>
+          カウンター越しに交わす何気ない会話も、一花のもてなしのひとつ。
+          常連の方にも、はじめての方にも、
+          同じ丁寧さでお迎えいたします。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="access" id="access">
+    <div class="section-inner">
+      <div class="section-head center reveal">
+        <p class="section-label">Access &amp; Reservation</p>
+        <h2 class="section-title">ご予約・アクセス</h2>
+      </div>
+
+      <div class="access-grid reveal">
+        <div class="access-info">
+          <dl>
+            <div class="info-row">
+              <dt>店名</dt>
+              <dd>一花（イチハナ）</dd>
+            </div>
+            <div class="info-row">
+              <dt>住所</dt>
+              <dd>〒892-0842<br>鹿児島県鹿児島市東千石町10-2<br>第2やまさんビル 2F</dd>
+            </div>
+            <div class="info-row">
+              <dt>アクセス</dt>
+              <dd>鹿児島市電1系統「天文館通」電停より徒歩約3分</dd>
+            </div>
+            <div class="info-row">
+              <dt>電話</dt>
+              <dd><a href="tel:0992930048">099-293-0048</a></dd>
+            </div>
+            <div class="info-row">
+              <dt>営業時間</dt>
+              <dd>18:00 〜 22:30（月〜土）<br><span class="note">お食事は2時間制でご案内しております</span></dd>
+            </div>
+            <div class="info-row">
+              <dt>定休日</dt>
+              <dd>日曜日 ／ 月曜不定休あり</dd>
+            </div>
+            <div class="info-row">
+              <dt>ご予算</dt>
+              <dd>おまかせコース 6,600円（税込）<br>特選おまかせコース 8,800円（税込）</dd>
+            </div>
+            <div class="info-row">
+              <dt>お席</dt>
+              <dd>カウンター8席 ／ テーブル席（4〜6名）2卓　全16席<br><span class="note">個室はございません・全席禁煙</span></dd>
+            </div>
+          </dl>
+          <a href="tel:0992930048" class="btn-reserve">お電話でのご予約 099-293-0048</a>
+        </div>
+
+        <div class="access-map">
+          <iframe
+            title="一花 地図"
+            src="https://maps.google.com/maps?q=%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%E9%B9%BF%E5%85%90%E5%B3%B6%E5%B8%82%E6%9D%B1%E5%8D%83%E7%9F%B3%E7%94%BA10-2&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <img src="images/logo-mark.png" alt="一花" class="footer-logo">
+  <p>鹿児島県鹿児島市東千石町10-2 第2やまさんビル2F　|　099-293-0048</p>
+  <p class="copyright">&copy; <span id="year"></span> Ichihana. All Rights Reserved.</p>
+</footer>
+
+<a href="#home" class="to-top" id="toTop" aria-label="ページトップへ">↑</a>
+
+<script src="js/script.js"></script>
+</body>
+</html>
