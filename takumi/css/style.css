@@ -133,11 +133,12 @@ ul{ margin:0; padding:0; list-style:none; }
   display:flex; align-items:center; justify-content:center;
   overflow:hidden;
   background:
+    linear-gradient(180deg, rgba(16,12,11,.5) 0%, rgba(16,12,11,.4) 45%, rgba(12,9,8,.92) 100%),
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,31,46,.35), transparent 60%),
-    linear-gradient(180deg, #1a1412 0%, #14100f 60%, #100c0b 100%);
+    url('../images/hero-sommelier-window.jpg') center 25% / cover no-repeat;
 }
 .hero-pattern{
-  position:absolute; inset:0; opacity:.55; mix-blend-mode: soft-light;
+  position:absolute; inset:0; opacity:.35; mix-blend-mode: soft-light;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='145.4' viewBox='0 0 84 145.4'%3E%3Cg fill='none' stroke='%23e9d3ab' stroke-width='0.5' opacity='0.45'%3E%3Cpath d='M42 0 L84 24.2 L84 72.7 L42 96.9 L0 72.7 L0 24.2 Z'/%3E%3Cpath d='M42 0 L42 96.9 M0 24.2 L84 72.7 M84 24.2 L0 72.7'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 110px 190px;
 }
@@ -202,6 +203,17 @@ ul{ margin:0; padding:0; list-style:none; }
   background:
     radial-gradient(ellipse 70% 60% at 50% 0%, rgba(124,31,46,.3), transparent 65%),
     var(--bg-alt);
+}
+/* photo variants — same dark overlay treatment as .hero, per-page background image */
+.page-hero.photo-wine{
+  background:
+    linear-gradient(180deg, rgba(16,12,11,.55) 0%, rgba(16,12,11,.45) 45%, rgba(12,9,8,.9) 100%),
+    url('../images/wine-cellar-corridor.jpg') center 45% / cover no-repeat;
+}
+.page-hero.photo-consulting{
+  background:
+    linear-gradient(180deg, rgba(16,12,11,.6) 0%, rgba(16,12,11,.45) 45%, rgba(12,9,8,.9) 100%),
+    url('../images/restaurant-counter-glass.jpg') center 40% / cover no-repeat;
 }
 .page-hero-en{
   position:relative; z-index:1;
@@ -306,6 +318,9 @@ p{ color: var(--ink-soft); }
 .split-visual .glyph{
   width: 46%; height: auto; opacity:.9;
 }
+.split-visual img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
 .split-text p{ margin: 0 0 20px; }
 .split-text p:last-child{ margin-bottom:0; }
 
@@ -356,6 +371,9 @@ p{ color: var(--ink-soft); }
   display:flex; align-items:center; justify-content:center;
 }
 .detail-visual svg{ width: 34%; height:auto; opacity:.9; }
+.detail-visual img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
 
 /* ---------- Stat / feature strip ---------- */
 .feature-strip{
