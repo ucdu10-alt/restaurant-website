@@ -17,7 +17,7 @@
   --wine-line: rgba(168,56,74,0.35);
   --serif:     'Shippori Mincho', 'Noto Serif JP', serif;
   --sans:      'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
-  --accent-en: 'Cormorant Garamond', serif;
+  --accent-en: var(--serif); /* unified to one elegant serif — no second typeface */
   --ease: cubic-bezier(.22,.61,.36,1);
 }
 
@@ -37,7 +37,7 @@ html{ scroll-behavior: smooth; }
   opacity:0; animation: loaderFade 1.6s var(--ease) forwards;
 }
 .loader-sub{
-  display:block; font-family: var(--accent-en); font-style: italic;
+  display:block; font-family: var(--accent-en); font-style: normal;
   font-size: .7rem; letter-spacing: .4em; color: var(--ink-mute);
   margin-top: 16px; text-align:center;
   opacity:0; animation: loaderFade 1.6s .3s var(--ease) forwards;
@@ -96,7 +96,7 @@ ul{ margin:0; padding:0; list-style:none; }
 .brand-name{ font-family: var(--serif); font-size: 1rem; letter-spacing:.16em; color: var(--ink); }
 .brand-sub{
   font-family: var(--accent-en); font-size: .64rem; letter-spacing: .32em;
-  color: var(--gold); font-style: italic; text-transform: uppercase;
+  color: var(--gold); font-style: normal; text-transform: uppercase;
 }
 .main-nav{ display:flex; align-items:center; gap: 30px; }
 .main-nav a{
@@ -144,7 +144,7 @@ ul{ margin:0; padding:0; list-style:none; }
 }
 .hero-content{ position:relative; z-index:2; text-align:center; color: var(--ink); padding: 140px 20px 80px; }
 .hero-eyebrow{
-  font-family: var(--accent-en); font-style: italic; letter-spacing: .38em;
+  font-family: var(--accent-en); font-style: normal; letter-spacing: .38em;
   font-size: .92rem; color: var(--gold); margin: 0 0 26px;
   text-transform: uppercase; opacity:0; animation: fadeUp 1s .4s var(--ease) forwards;
 }
@@ -153,7 +153,7 @@ ul{ margin:0; padding:0; list-style:none; }
   opacity:0; animation: fadeUp 1.2s .7s var(--ease) forwards;
 }
 .hero-title .en{
-  display:block; font-family: var(--accent-en); font-style: italic; font-weight:400;
+  display:block; font-family: var(--accent-en); font-style: normal; font-weight:400;
   font-size: .32em; letter-spacing: .5em; color: var(--gold); margin-top: 18px;
 }
 .hero-tagline{
@@ -172,7 +172,7 @@ ul{ margin:0; padding:0; list-style:none; }
   color: var(--ink-soft);
 }
 .hero-scroll .scroll-label{
-  writing-mode: vertical-rl; font-family: var(--accent-en); font-style:italic;
+  writing-mode: vertical-rl; font-family: var(--accent-en); font-style:normal;
   letter-spacing:.2em; font-size:.78rem; text-transform:uppercase;
 }
 .hero-scroll .scroll-line{ width:1px; height:64px; overflow:hidden; }
@@ -217,7 +217,7 @@ ul{ margin:0; padding:0; list-style:none; }
 }
 .page-hero-en{
   position:relative; z-index:1;
-  font-family: var(--accent-en); font-style: italic; letter-spacing:.32em;
+  font-family: var(--accent-en); font-style: normal; letter-spacing:.32em;
   color: var(--gold); font-size: .82rem; text-transform:uppercase; margin: 0 0 20px;
 }
 .page-hero-ghost{
@@ -259,8 +259,8 @@ section{ position: relative; z-index: 1; padding: 120px 0; background: var(--bg)
 }
 .giant-title-wrap .giant-title{
   position:relative; z-index:1; margin:0;
-  font-family: var(--accent-en); font-style: italic; font-weight: 300;
-  font-size: clamp(2.6rem, 9vw, 6rem); letter-spacing:.02em; color: var(--ink);
+  font-family: var(--accent-en); font-style: normal; font-weight: 400;
+  font-size: clamp(2.6rem, 9vw, 6rem); letter-spacing:.04em; color: var(--ink);
   line-height:1.05;
 }
 .giant-title-wrap .giant-sub{
@@ -285,7 +285,7 @@ section{ position: relative; z-index: 1; padding: 120px 0; background: var(--bg)
   .floating-cta svg{ width:17px; height:17px; margin-bottom:4px; }
 }
 .section-label{
-  font-family: var(--accent-en); font-style: italic; color: var(--gold);
+  font-family: var(--accent-en); font-style: normal; color: var(--gold);
   letter-spacing: .32em; font-size: .8rem; text-transform: uppercase; margin: 0 0 18px;
 }
 .section-label::before{
@@ -343,7 +343,7 @@ p{ color: var(--ink-soft); }
 .service-card h3{ font-size: 1.1rem; letter-spacing:.06em; margin-bottom: 16px; }
 .service-card p{ font-size: .92rem; margin: 0 0 24px; }
 .service-card .more{
-  font-family: var(--accent-en); font-style: italic; color: var(--gold);
+  font-family: var(--accent-en); font-style: normal; color: var(--gold);
   letter-spacing: .1em; font-size: .82rem; text-transform:uppercase;
   border-bottom: 1px solid var(--gold-line); padding-bottom: 4px;
 }
@@ -357,7 +357,7 @@ p{ color: var(--ink-soft); }
 .detail-block.reverse{ direction: rtl; }
 .detail-block.reverse > *{ direction: ltr; }
 .detail-num{
-  font-family: var(--accent-en); font-style: italic; color: var(--wine-light);
+  font-family: var(--accent-en); font-style: normal; color: var(--wine-light);
   font-size: 1rem; letter-spacing:.2em; margin-bottom: 14px; display:block;
 }
 .detail-block h3{ font-size: 1.4rem; letter-spacing:.06em; margin-bottom: 20px; }
@@ -407,7 +407,7 @@ p{ color: var(--ink-soft); }
   background: var(--bg-card); border:1px solid var(--gold-line); border-radius:3px; padding: 34px;
 }
 .profile-name{ font-size:1.2rem; letter-spacing:.08em; margin-bottom:6px; }
-.profile-role{ font-family: var(--accent-en); font-style:italic; color: var(--gold); font-size:.82rem; letter-spacing:.1em; margin-bottom:20px; display:block; }
+.profile-role{ font-family: var(--accent-en); font-style:normal; color: var(--gold); font-size:.82rem; letter-spacing:.1em; margin-bottom:20px; display:block; }
 .profile-cert{
   display:inline-block; margin-top:18px; padding: 6px 16px; border:1px solid var(--wine-line);
   color: var(--wine-light); font-size:.76rem; letter-spacing:.08em; border-radius:20px;
@@ -421,7 +421,7 @@ p{ color: var(--ink-soft); }
 .process-item:first-child{ border-top:none; }
 .process-item::before{
   counter-increment: step; content: counter(step, decimal-leading-zero);
-  position:absolute; left:0; top: 28px; font-family: var(--accent-en); font-style:italic;
+  position:absolute; left:0; top: 28px; font-family: var(--accent-en); font-style:normal;
   color: var(--wine-light); font-size:1.3rem;
 }
 .process-item h4{ font-size:1.02rem; letter-spacing:.05em; margin-bottom:10px; color: var(--ink); font-family: var(--serif); }
