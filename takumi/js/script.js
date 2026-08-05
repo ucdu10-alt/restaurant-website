@@ -1,17 +1,23 @@
 (() => {
   'use strict';
 
+  // Loader
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    if (loader) {
+      setTimeout(() => loader.classList.add('done'), 500);
+    }
+  });
+
   // Footer year
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Header scroll state
   const header = document.getElementById('siteHeader');
-  const toTop = document.getElementById('toTop');
   const onScroll = () => {
     const y = window.scrollY;
     if (header) header.classList.toggle('scrolled', y > 40);
-    if (toTop) toTop.classList.toggle('show', y > 600);
   };
   document.addEventListener('scroll', onScroll, { passive: true });
   onScroll();

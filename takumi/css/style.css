@@ -23,6 +23,28 @@
 
 *, *::before, *::after{ box-sizing: border-box; }
 html{ scroll-behavior: smooth; }
+
+/* ---------- Loader ---------- */
+.loader{
+  position:fixed; inset:0; z-index:999;
+  background: var(--bg);
+  display:flex; align-items:center; justify-content:center; flex-direction:column;
+  transition: opacity .9s var(--ease), visibility .9s var(--ease);
+}
+.loader-mark{
+  font-family: var(--serif); color: var(--gold); font-size: 2.4rem;
+  letter-spacing: .5em; padding-left: .5em;
+  opacity:0; animation: loaderFade 1.6s var(--ease) forwards;
+}
+.loader-sub{
+  display:block; font-family: var(--accent-en); font-style: italic;
+  font-size: .7rem; letter-spacing: .4em; color: var(--ink-mute);
+  margin-top: 16px; text-align:center;
+  opacity:0; animation: loaderFade 1.6s .3s var(--ease) forwards;
+}
+@keyframes loaderFade{ to{ opacity:1; } }
+.loader.done{ opacity:0; visibility:hidden; pointer-events:none; }
+
 body{
   margin:0;
   background: var(--bg);
@@ -104,9 +126,10 @@ ul{ margin:0; padding:0; list-style:none; }
 }
 .nav-toggle span{ width:100%; height:1px; background: var(--ink); transition: transform .35s var(--ease), opacity .3s; }
 
-/* ---------- Hero (home) ---------- */
+/* ---------- Hero (home) — sticky "curtain" hero: the next section
+   scrolls up over it while it stays pinned, like megui-restaurant.com ---------- */
 .hero{
-  position: relative; min-height: 92svh;
+  position: sticky; top: 0; z-index: 0; min-height: 92svh;
   display:flex; align-items:center; justify-content:center;
   overflow:hidden;
   background:
@@ -143,10 +166,16 @@ ul{ margin:0; padding:0; list-style:none; }
 @keyframes fadeUp{ from{ opacity:0; transform: translateY(22px);} to{ opacity:1; transform:none; } }
 
 .hero-scroll{
-  position:absolute; left:50%; bottom:36px; transform: translateX(-50%);
-  width:1px; height:64px; overflow:hidden; z-index:2;
+  position:absolute; left: 6vw; bottom:40px; z-index:2;
+  display:flex; flex-direction:column; align-items:center; gap:14px;
+  color: var(--ink-soft);
 }
-.hero-scroll span{
+.hero-scroll .scroll-label{
+  writing-mode: vertical-rl; font-family: var(--accent-en); font-style:italic;
+  letter-spacing:.2em; font-size:.78rem; text-transform:uppercase;
+}
+.hero-scroll .scroll-line{ width:1px; height:64px; overflow:hidden; }
+.hero-scroll .scroll-line span{
   display:block; width:1px; height:100%; background: var(--gold);
   animation: scrollLine 2.2s ease-in-out infinite;
 }
@@ -165,20 +194,31 @@ ul{ margin:0; padding:0; list-style:none; }
 .btn-ghost{ border: 1px solid var(--gold-line); color: var(--gold); }
 .btn-ghost:hover{ background: var(--gold); color: var(--bg); border-color: var(--gold); }
 
-/* ---------- Page hero (inner pages) ---------- */
+/* ---------- Page hero (inner pages) — same sticky "curtain" treatment ---------- */
 .page-hero{
-  position:relative; padding: 190px 6vw 90px; text-align:center; overflow:hidden;
+  position: sticky; top: 0; z-index: 0;
+  min-height: 78svh; padding: 120px 6vw; text-align:center; overflow:hidden;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
   background:
     radial-gradient(ellipse 70% 60% at 50% 0%, rgba(124,31,46,.3), transparent 65%),
     var(--bg-alt);
-  border-bottom: 1px solid var(--gold-line);
 }
 .page-hero-en{
+  position:relative; z-index:1;
   font-family: var(--accent-en); font-style: italic; letter-spacing:.32em;
-  color: var(--gold); font-size: .82rem; text-transform:uppercase; margin: 0 0 16px;
+  color: var(--gold); font-size: .82rem; text-transform:uppercase; margin: 0 0 20px;
 }
-.page-hero h1{ font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing:.08em; }
-.page-hero p{ color: var(--ink-soft); max-width: 620px; margin: 20px auto 0; }
+.page-hero-ghost{
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  font-family: var(--serif); font-size: clamp(7rem, 26vw, 17rem);
+  color: var(--gold); opacity:.06; white-space:nowrap; pointer-events:none;
+  z-index:0; user-select:none; line-height:1;
+}
+.page-hero h1{
+  position:relative; z-index:1;
+  font-size: clamp(2.6rem, 8vw, 5rem); font-weight:500; letter-spacing:.06em;
+}
+.page-hero p{ position:relative; z-index:1; color: var(--ink-soft); max-width: 620px; margin: 24px auto 0; }
 .breadcrumb{
   position:relative; z-index:1; font-size:.76rem; color: var(--ink-mute);
   letter-spacing:.05em; margin-bottom: 26px;
@@ -190,8 +230,48 @@ ul{ margin:0; padding:0; list-style:none; }
 .reveal.in{ opacity:1; transform:none; }
 
 /* ---------- Section common ---------- */
-section{ position: relative; padding: 120px 0; }
+/* every section after the sticky hero needs an opaque background and a
+   higher stacking position so it slides over the pinned hero as it scrolls */
+section{ position: relative; z-index: 1; padding: 120px 0; background: var(--bg); }
 .bg-alt{ background: var(--bg-alt); }
+
+/* ---------- Giant title divider (large thin English heading + ghost watermark) ---------- */
+.giant-title-wrap{
+  position:relative; text-align:center; padding: 10px 0 30px; overflow:hidden;
+}
+.giant-title-wrap .ghost{
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-52%);
+  font-family: var(--serif); font-size: clamp(6rem, 22vw, 15rem);
+  color: var(--gold); opacity:.05; white-space:nowrap; pointer-events:none;
+  z-index:0; user-select:none; line-height:1;
+}
+.giant-title-wrap .giant-title{
+  position:relative; z-index:1; margin:0;
+  font-family: var(--accent-en); font-style: italic; font-weight: 300;
+  font-size: clamp(2.6rem, 9vw, 6rem); letter-spacing:.02em; color: var(--ink);
+  line-height:1.05;
+}
+.giant-title-wrap .giant-sub{
+  position:relative; z-index:1; display:block; margin-top:18px;
+  font-size:.86rem; color: var(--ink-mute); letter-spacing:.06em;
+}
+
+/* ---------- Floating CTA (persistent, fixed — replaces to-top) ---------- */
+.floating-cta{
+  position:fixed; right: 24px; bottom: 24px; z-index: 250;
+  width: 104px; height: 104px; border-radius: 50%;
+  background: var(--ink); color: var(--bg);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; font-size:.7rem; letter-spacing:.03em; line-height:1.5;
+  box-shadow: 0 16px 36px -12px rgba(0,0,0,.6);
+  transition: transform .35s var(--ease), background .35s var(--ease), color .35s var(--ease);
+}
+.floating-cta svg{ width:20px; height:20px; margin-bottom:6px; }
+.floating-cta:hover{ transform: translateY(-4px); background: var(--wine); color: var(--ink); }
+@media (max-width: 720px){
+  .floating-cta{ width:84px; height:84px; font-size:.62rem; right:16px; bottom:16px; }
+  .floating-cta svg{ width:17px; height:17px; margin-bottom:4px; }
+}
 .section-label{
   font-family: var(--accent-en); font-style: italic; color: var(--gold);
   letter-spacing: .32em; font-size: .8rem; text-transform: uppercase; margin: 0 0 18px;
@@ -389,18 +469,6 @@ dd a:hover{ color: var(--gold); }
 .footer-nav a:hover{ color: var(--gold); }
 .footer-meta{ color: var(--ink-mute); font-size:.82rem; margin: 4px 0; }
 .copyright{ margin-top: 22px; font-size:.72rem; letter-spacing:.05em; color: var(--ink-mute); }
-
-/* ---------- To top ---------- */
-.to-top{
-  position:fixed; right: 26px; bottom: 26px; z-index: 150;
-  width:44px; height:44px; border:1px solid var(--gold-line); border-radius:50%;
-  display:flex; align-items:center; justify-content:center; color: var(--gold);
-  background: rgba(20,16,15,.7); backdrop-filter: blur(6px);
-  opacity:0; visibility:hidden; transform: translateY(10px);
-  transition: opacity .4s, transform .4s, visibility .4s;
-}
-.to-top.show{ opacity:1; visibility:visible; transform:none; }
-.to-top:hover{ background: var(--gold); color: var(--bg); }
 
 /* ---------- Responsive ---------- */
 .sp-only{ display:none; }
