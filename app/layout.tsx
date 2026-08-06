@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    images: [{ url: "/images/hero.jpg", width: 2400, height: 1600 }],
+    images: [{ url: "/images/hero.jpg", width: 1536, height: 1024 }],
     locale: "ja_JP",
     type: "website",
   },

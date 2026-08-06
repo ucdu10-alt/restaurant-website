@@ -21,7 +21,7 @@ export function Hero() {
       >
         <Image
           src="/images/hero.jpg"
-          alt="一花 カウンター席。麻の葉文様の行灯といけばな。"
+          alt="一花 カウンター席。麻の葉文様の行灯と桜。"
           fill
           preload
           quality={90}
