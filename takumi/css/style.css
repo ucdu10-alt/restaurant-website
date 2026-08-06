@@ -215,6 +215,21 @@ ul{ margin:0; padding:0; list-style:none; }
     linear-gradient(180deg, rgba(16,12,11,.6) 0%, rgba(16,12,11,.45) 45%, rgba(12,9,8,.9) 100%),
     url('../images/restaurant-counter-glass.jpg') center 40% / cover no-repeat;
 }
+.page-hero.photo-about{
+  background:
+    linear-gradient(180deg, rgba(16,12,11,.6) 0%, rgba(16,12,11,.45) 45%, rgba(12,9,8,.9) 100%),
+    url('../images/about-hero.jpg') center 55% / cover no-repeat;
+}
+.page-hero.photo-contact{
+  background:
+    linear-gradient(180deg, rgba(16,12,11,.6) 0%, rgba(16,12,11,.45) 45%, rgba(12,9,8,.9) 100%),
+    url('../images/contact-hero.jpg') center 55% / cover no-repeat;
+}
+.page-hero.photo-menu{
+  background:
+    linear-gradient(180deg, rgba(16,12,11,.6) 0%, rgba(16,12,11,.45) 45%, rgba(12,9,8,.9) 100%),
+    url('../images/menu-hero.jpg') center 50% / cover no-repeat;
+}
 .page-hero-en{
   position:relative; z-index:1;
   font-family: var(--accent-en); font-style: normal; letter-spacing:.32em;
@@ -405,6 +420,10 @@ p{ color: var(--ink-soft); }
 }
 .profile-card{
   background: var(--bg-card); border:1px solid var(--gold-line); border-radius:3px; padding: 34px;
+}
+.profile-photo{
+  width: 120px; aspect-ratio: 4/5; object-fit: cover; border-radius: 2px;
+  border: 1px solid var(--gold-line); display:block; margin-bottom: 24px;
 }
 .profile-name{ font-size:1.2rem; letter-spacing:.08em; margin-bottom:6px; }
 .profile-role{ font-family: var(--accent-en); font-style:normal; color: var(--gold); font-size:.82rem; letter-spacing:.1em; margin-bottom:20px; display:block; }
