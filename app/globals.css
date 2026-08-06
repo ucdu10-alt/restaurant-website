@@ -1,0 +1,104 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* 一花 palette — 白・黒・生成り・木・石・紙のみ */
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-ink: var(--ink);
+  --color-stone: var(--stone);
+  --color-wood: var(--wood);
+  --color-hairline: var(--hairline);
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-destructive: var(--destructive);
+
+  --font-sans: var(--font-noto-sans-jp);
+  --font-serif: var(--font-zen-old-mincho);
+  --font-en: var(--font-garamond);
+
+  --radius-sm: 0px;
+  --radius-md: 1px;
+  --radius-lg: 2px;
+  --radius-xl: 2px;
+}
+
+:root {
+  /* 生成り(紙) */
+  --paper: #f7f3ea;
+  --paper-deep: #eee6d5;
+  /* 墨 */
+  --ink: #1c1a17;
+  /* 石 */
+  --stone: #857e70;
+  /* 木(唯一のアクセント) */
+  --wood: #a9825a;
+  --hairline: rgba(28, 26, 23, 0.12);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --primary: var(--wood);
+  --primary-foreground: var(--paper);
+  --secondary: var(--paper-deep);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-deep);
+  --muted-foreground: var(--stone);
+  --accent: var(--paper-deep);
+  --accent-foreground: var(--ink);
+  --destructive: #a3453a;
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--wood);
+  --radius: 2px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "palt";
+  }
+  ::selection {
+    background: var(--wood);
+    color: var(--paper);
+  }
+}
+
+@layer utilities {
+  .tracking-label {
+    letter-spacing: 0.28em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
